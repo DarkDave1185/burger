@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="../../public/assests/css/style1.css">
+
+<div class="container">
+
+    <h1 class="page"> CrustyBurger @ BB</h1>
+    <iframe src="https://giphy.com/embed/XbAYSN0jUBQbe" width="1000" height="245" frameBorder="0" class="giphy-embed gif" allowFullScreen></iframe>
+    
+    <div class="container">
+         <div class="row">
+             <div class="col">
+                <h3 class="title"> yourBurgers</h3>
+            
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    <form action="burger/eat/{{id}}" method="POST">
+                        <div class="input-group">
+                            <hr>
+                            <li class="form-control">{{id}}. {{burgerName}}</li>
+                            <hr>
+                            <span class="input-group-btn">
+                                <button class="btn"><i class="fa fa-hamburger"></i>eatIt!
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    {{/unless}}
+                {{/each}}
+
+            </div>
+            <div class="col">
+                <h3 class="title"> pastBurgers</h3>
+                {{#each burgers}}
+                    {{#if this.devoured}}
+                        <div class="input-group">
+                            <li class="form-control">
+                                {{this.id}}. {{this.burgerName}}
+                            </li>
+                        </div>
+                     {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+        <form action="burger/create" method="POST">  
+            <center><label for="new_burger" class="white">Add your FAVORITE!</label></center>
+            <textarea class="form-control" type="text" columns='80' rows="6" id="new_burger" required value="" name="burgerName"></textarea>
+    
+            <center>
+                <button id="submit-button" type="submit" class="btn btn-danger">makeIt!</button>
+            </center>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

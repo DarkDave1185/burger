@@ -1,0 +1,19 @@
+//troble getting styling to show on fleshd out page. had MIME ERROR continuously//
+* {
+    padding: 0;
+}
+
+body {
+    background-image: url('/public/assests/img/bikinibottom.jpg');
+    background-color: #111;
+}
+
+.page {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    color: brown;
+}
+
+.title {
+    color: brown;
+}
